@@ -15,7 +15,7 @@
     $(':input[placeholder]').each(function(index) {
         var el = $(this);
         var placeholderText = el.attr('placeholder');
-        el.val(placeholderText);
+	if (el.val() === '') el.val(placeholderText);
         el.bind('focus blur', function(e) {
             if (e.type === 'focus' && el.val() === placeholderText) el.val(''); 
             if (e.type === 'blur' && el.val() === '') el.val(placeholderText); 
