@@ -7,8 +7,10 @@ It is licensed under the Apache 2 license and is Copyright 2011 Dan Bentley
 
 ## Dan
 **Twitter:** [@dan_bentley](http://twitter.com/dan_bentley)
+
 **GitHub:** [github.com/danbentley](https://github.com/danbentley)
 	
 ## Harry
 **Twitter:**	[@csswizardry](http://twitter.com/csswizardry)
+
 **URL:**		[csswizardry.com](http://csswizardry.com/)
