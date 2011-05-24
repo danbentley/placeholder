@@ -1,0 +1,76 @@
+/*------------------------------*\
+	Placeholder plugin
+\*------------------------------*/
+
+
+
+
+
+/*
+CSS by Harry Roberts -- @csswizardry
+Built to accompany the placeholder plugin built by Dan Bentley -- @dan_bentley
+
+github.com/danbentley/placeholder
+
+*/
+
+
+
+
+
+/*--- HOUSEKEEPING ---*/
+/*
+Ignore this section, your styles should already have this covered...
+*/
+html{
+	color:#333;
+	background:#fff;
+	font:0.75em/1.5 "Helvetica Neue", Arial;
+}
+
+
+
+
+
+/*--- FORMS ---*/
+/*
+This is the bit you need.
+*/
+label{
+	position:absolute;
+	left:-9999px;
+}
+input,
+textarea{
+	font:inherit;
+	resize:none;
+}
+
+
+
+
+
+/*--- THE MAGIC ---*/
+/*
+This is the best bit!
+*/
+[placeholder]{
+	cursor:pointer;
+	color:#999;
+	padding:5px;
+	border:1px solid #999;
+	
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	border-radius:2px;
+}
+[placeholder]:active,
+[placeholder]:focus{
+	cursor:text;
+	color:#333;
+	border:1px solid #0a0;
+	
+	-moz-box-shadow:0 0 5px #0a0, 0 0 5px rgba(0,0,0,0.25) inset;
+	-webkit-box-shadow:0 0 5px #0a0, 0 0 5px rgba(0,0,0,0.25) inset;
+	box-shadow:0 0 5px #0a0, 0 0 5px rgba(0,0,0,0.25) inset;
+}
