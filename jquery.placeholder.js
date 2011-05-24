@@ -10,7 +10,7 @@
      */
         
     // Return if native support is available.
-	if (("placeholder" in document.createElement("input"))) return;
+    if (("placeholder" in document.createElement("input"))) return;
 
     $(':input[placeholder]').each(function(index) {
         var el = $(this);
