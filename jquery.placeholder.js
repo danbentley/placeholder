@@ -3,6 +3,7 @@
     /**
      * Spoofs placeholders in browsers that don't support them. (eg Firefox 3)
      * 
+     * Copyright 2011 Dan Bentley
      * Licensed under the Apache License 2.0
      *
      * Author: Dan Bentley [github.com/danbentley]
