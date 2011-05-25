@@ -1,4 +1,4 @@
-(function() {
+(function($) {
 
     /**
      * Spoofs placeholders in browsers that don't support them. (eg Firefox 3)
