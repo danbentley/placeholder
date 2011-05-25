@@ -8,17 +8,33 @@
      *
      * Author: Dan Bentley [github.com/danbentley]
      */
-        
+
     // Return if native support is available.
     if ("placeholder" in document.createElement("input")) return;
 
-    $(':input[placeholder]').each(function(index) {
-        var el = $(this);
-        var placeholderText = el.attr('placeholder');
-	if (el.val() === '') el.val(placeholderText);
-        el.bind('focus blur', function(e) {
-            if (e.type === 'focus' && el.val() === placeholderText) el.val(''); 
-            if (e.type === 'blur' && el.val() === '') el.val(placeholderText); 
+    function setupPlaceholder(input) {
+
+        var placeholderText = input.attr('placeholder');
+
+        if (input.val() === '') input.val(placeholderText);
+        input.bind('focus blur', function(e) {
+            if (e.type === 'focus' && input.val() === placeholderText) input.val(''); 
+            if (e.type === 'blur' && input.val() === '') input.val(placeholderText); 
         });
+    }
+
+    function clearPlaceholdersBeforeSubmit(form) {
+        form.find(':input[placeholder]').each(function() {
+            var el = $(this);
+            if (el.val() === el.attr('placeholder')) el.val('');
+        });
+    }
+ 
+    $(':input[placeholder]').each(function(index) {
+        setupPlaceholder($(this));
+    });
+   
+    $('form').submit(function(e) {
+        clearPlaceholdersBeforeSubmit($(this));
     });
 })(jQuery);
