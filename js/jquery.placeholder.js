@@ -12,12 +12,14 @@
 	// Return if native support is available.
 	if ("placeholder" in document.createElement("input")) return;
 
-	$(':input[placeholder]').each(function() {
-		setupPlaceholder($(this));
-	});
-   
-	$('form').submit(function(e) {
-		clearPlaceholdersBeforeSubmit($(this));
+	$(document).ready(function(){
+		$(':input[placeholder]').each(function() {
+			setupPlaceholder($(this));
+		});
+	   
+		$('form').submit(function(e) {
+			clearPlaceholdersBeforeSubmit($(this));
+		});
 	});
 
 	function setupPlaceholder(input) {
