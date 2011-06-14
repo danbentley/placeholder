@@ -69,12 +69,12 @@
 	}
 
 	function createPasswordPlaceholder(input) {
-		return input.clone().attr({
+		return $('<input>').attr({
 			id: 'password-placeholder' + input.attr('name'),
+			placeholder: input.attr('placeholder'),
 			value: input.attr('placeholder'),
-			type: 'input',
 			readonly: true
-		});
+		}).addClass(input.attr('class'));
 	}
 
 	function clearPlaceholdersBeforeSubmit(form) {
