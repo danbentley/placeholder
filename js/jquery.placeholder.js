@@ -33,8 +33,8 @@
 		setPlaceholderOrFlagChanged(input, placeholderText);
 		input.bind({
 			focus: function(e) {
-				if (input.val() === placeholderText 
-					&& input.data('changed') === undefined) input.val('');
+				if (input.data('changed') === true) return;
+				if (input.val() === placeholderText) input.val('');
 			},
 			blur: function(e) {
 				if (input.val() === '') input.val(placeholderText); 
@@ -78,8 +78,8 @@
 
 	function clearPlaceholdersBeforeSubmit(form) {
 		form.find(':input[placeholder]').each(function() {
-			if ($(this).val() === $(this).attr('placeholder') 
-				&& $(this).data('changed') === undefined) $(this).val('');
+			if ($(this).data('changed') === true) return;
+			if ($(this).val() === $(this).attr('placeholder')) $(this).val('');
 		});
 	}
 })(jQuery);
