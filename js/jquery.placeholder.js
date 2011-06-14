@@ -17,7 +17,7 @@
 			setupPlaceholder($(this));
 		});
 
-		$(':password').each(function() {
+		$(':password[placeholder]').each(function() {
 			setupPasswords($(this));
 		});
 	   
@@ -70,7 +70,6 @@
 
 	function createPasswordPlaceholder(input) {
 		return $('<input>').attr({
-			id: 'password-placeholder' + input.attr('name'),
 			placeholder: input.attr('placeholder'),
 			value: input.attr('placeholder'),
 			readonly: true
@@ -78,9 +77,6 @@
 	}
 
 	function clearPlaceholdersBeforeSubmit(form) {
-
-		form.find(':input[name^=password-placeholder]').remove();
-
 		form.find(':input[placeholder]').each(function() {
 			if ($(this).val() === $(this).attr('placeholder') 
 				&& $(this).data('changed') === undefined) $(this).val('');
