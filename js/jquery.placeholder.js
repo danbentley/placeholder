@@ -56,10 +56,9 @@
 		(input.val() === '') ? input.hide() : passwordPlaceholder.hide();
 
 		$(input).blur(function(e) {
-			if (input.val() === '') {
-				input.hide();
-				passwordPlaceholder.show();
-			}
+			if (input.val() !== '') return;
+			input.hide();
+			passwordPlaceholder.show();
 		});
 			
 		$(passwordPlaceholder).focus(function(e) {
