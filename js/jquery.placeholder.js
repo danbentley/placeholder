@@ -33,20 +33,20 @@
 		setPlaceholderOrFlagChanged(input, placeholderText);
 		input.bind({
 			focus: function(e) {
-				if (input.data('changed') === true) return;
+				if (input.hasClass('populated') === true) return;
 				if (input.val() === placeholderText) input.val('');
 			},
 			blur: function(e) {
 				if (input.val() === '') input.val(placeholderText); 
 			},
 			change: function(e) {
-				if (input.val() !== '') input.data('changed', true);
+				if (input.val() !== '') input.addClass('populated');
 			}
 		});
 	}
 
 	function setPlaceholderOrFlagChanged(input, text) {
-		(input.val() === '') ? input.val(text) : input.data('changed', true);
+		(input.val() === '') ? input.val(text) : input.addClass('populated');
 	}
 
 	function setupPasswords(input) {
@@ -78,7 +78,7 @@
 
 	function clearPlaceholdersBeforeSubmit(form) {
 		form.find(':input[placeholder]').each(function() {
-			if ($(this).data('changed') === true) return;
+			if ($(this).hasClass('populated') === true) return;
 			if ($(this).val() === $(this).attr('placeholder')) $(this).val('');
 		});
 	}
