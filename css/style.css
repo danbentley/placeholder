@@ -75,8 +75,9 @@ This is the best bit!
 	box-shadow:0 0 5px #0a0, 0 0 5px rgba(0,0,0,0.25) inset;
 }
 /*
-If the input has placeholder="" AND value="" darken its appearance to show it is pre-populated and not a form hint.
+If the input has placeholder="" AND value="" darken its appearance to show it is pre-populated and not a form hint. Do the same if the user has input text.
 */
-[placeholder][value]{
-	color:#333;
+[placeholder][value],
+.populated{
+	color:#333!important; /* Important because we always want this to take precedence. */
 }
