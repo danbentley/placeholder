@@ -56,7 +56,6 @@ This is the best bit!
 */
 [placeholder]{
 	cursor:pointer;
-	color:#999;
 	padding:5px;
 	border:1px solid #999;
 	
@@ -67,17 +66,9 @@ This is the best bit!
 [placeholder]:active,
 [placeholder]:focus{
 	cursor:text;
-	color:#333;
 	border:1px solid #0a0;
 	
 	-moz-box-shadow:0 0 5px #0a0, 0 0 5px rgba(0,0,0,0.25) inset;
 	-webkit-box-shadow:0 0 5px #0a0, 0 0 5px rgba(0,0,0,0.25) inset;
 	box-shadow:0 0 5px #0a0, 0 0 5px rgba(0,0,0,0.25) inset;
-}
-/*
-If the input has placeholder="" AND value="" darken its appearance to show it is pre-populated and not a form hint. Do the same if the user has input text.
-*/
-[placeholder][value],
-.populated{
-	color:#333!important; /* Important because we always want this to take precedence. */
 }
