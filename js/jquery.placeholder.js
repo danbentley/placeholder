@@ -31,17 +31,13 @@
 		var placeholderText = input.attr('placeholder');
 
 		setPlaceholderOrFlagChanged(input, placeholderText);
-		input.bind({
-			focus: function(e) {
-				if (input.data('changed') === true) return;
-				if (input.val() === placeholderText) input.val('');
-			},
-			blur: function(e) {
-				if (input.val() === '') input.val(placeholderText); 
-			},
-			change: function(e) {
-				if (input.val() !== '') input.data('changed', true);
-			}
+		input.focus(function(e) {
+			if (input.data('changed') === true) return;
+			if (input.val() === placeholderText) input.val('');
+		}).blur(function(e) {
+			if (input.val() === '') input.val(placeholderText); 
+		}).change(function(e) {
+			input.data('changed', input.val() !== '');
 		});
 	}
 
